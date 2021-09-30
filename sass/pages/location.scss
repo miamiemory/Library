@@ -1,0 +1,26 @@
+.page-location {
+	@include md-and-up {
+		display: flex;
+		gap: var(--space-lg);
+	}
+	.location-image {
+		height: calc(14rem + 6vw);
+	}
+	.location-details {
+		@include md-and-up {
+			width: 18rem;
+			flex-shrink: 0;
+		}
+	}
+}
+.services-grid {
+	display: grid;
+	gap: var(--space-lg);
+	grid-template-columns: 1fr;
+	@include md-and-up {
+		grid-template-columns: 1fr 1fr;
+	}
+	> * {
+		min-width: 0;
+	}
+}

@@ -1,0 +1,20 @@
+.features-grid {
+	display: grid;
+	gap: var(--space-lg);
+	grid-template-columns: 1fr;
+	@include md-and-up {
+		grid-template-columns: 1fr 1fr;
+	}
+	> * {
+		min-width: 0;
+	}
+}
+.feature-item {
+	display: flex;
+	gap: var(--space-sm);
+}
+.feature-item-icon {
+	width: 4rem;
+	align-items: center;
+	flex-shrink: 0;
+}

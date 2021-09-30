@@ -1,0 +1,37 @@
+.footer {
+	padding: 6vw;
+	background-color: var(--color-primary);
+	color: #fff;
+	a {
+		color: inherit;
+		opacity: 0.7;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.footer-menu-grid {
+	display: grid;
+	gap: var(--space-lg);
+	grid-template-columns: 1fr;
+	@include sm-and-up {
+		grid-template-columns: 1fr 1fr;
+	}
+	@include md-and-up {
+		grid-template-columns: 2fr 1fr 1fr 1fr;
+	}
+	@include lg-and-up {
+		grid-template-columns: 3fr 1fr 1fr 1fr;
+	}
+
+	> * {
+		min-width: 0;
+	}
+}
+
+.footer-menu-list {
+	> li {
+		margin: var(--space-sm) 0;
+	}
+}

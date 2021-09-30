@@ -1,0 +1,21 @@
+.callout {
+	padding: 6vw;
+	text-align: center;
+	&.primary {
+		background: var(--color-primary);
+		color: #fff;
+		a {
+			color: inherit;
+			opacity: 0.7;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	&.secondary {
+		background: var(--color-secondary);
+	}
+	&.white {
+		background: #fff;
+	}
+}

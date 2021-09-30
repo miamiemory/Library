@@ -1,0 +1,61 @@
+.locations-grid {
+	margin: var(--space-md) 0;
+	display: grid;
+	gap: var(--space-md);
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+	> * {
+		min-width: 0;
+		font-size: 0.8rem;
+		h3 {
+			font-size: 1.5rem;
+		}
+	}
+	ul.hours {
+		li {
+			display: none;
+			padding: 0;
+			border-radius: var(--border-radius);
+		}
+		.today {
+			display: block;
+			background: none;
+		}
+	}
+}
+
+.location-image {
+	display: block;
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	margin-bottom: var(--space-sm);
+	height: 10rem;
+
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+.location-info {
+	margin: var(--space-sm) 0;
+	display: flex;
+	gap: 0.5rem;
+	.icon {
+		width: 1rem;
+		flex-shrink: 0;
+	}
+}
+.dayname {
+	display: inline-block;
+	width: 4ch;
+	font-weight: 600;
+}
+ul.hours {
+	li {
+		display: block;
+		padding: 0.1em 0.4em;
+	}
+	.today {
+		background: #fff;
+	}
+}

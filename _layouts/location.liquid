@@ -1,0 +1,92 @@
+---
+layout: base.liquid
+---
+
+<section class="page-location alignwide">
+	<div class="location-content">
+		{% image image, title, 'location-image' %}
+		<h1>{{ title }}</h1>
+		{{ content }}
+		<h2>Services:</h2>
+		<ul class="services-grid">
+			{% for service in services %}
+				<li class="service-item">
+					<div class="service-content">
+						<h3>{{ service.icon }} {{service.name}}</h3>
+						<hr class="short">
+						<p>{{service.description}}</p>
+					</div>
+					
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="location-details">
+		<h4>Contact Info</h4>
+		<a href="{% mapLink address, zip %}" class="location-info">
+			<div class="icon">
+				<i class="fas fa-map-marker-alt"></i>
+			</div>
+			<address class="content">
+				{{ address }}<br>
+				{{ city }}, {{ state }} {{ zip }}
+			</address>
+		</a>
+		<div class="location-info">
+			<div class="icon">
+				<i class="fas fa-phone"></i>
+			</div>
+			<div class="content">
+				<ul>
+					{% for phoneNumber in phone %}
+						<li>
+							{{ phoneNumber.name }}: 
+							<a href="{% telLink phoneNumber.number %}">
+								<div class="content">
+									{{ phoneNumber.number }}
+								</div>
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<ul class="social-links">
+			{% for link in links %}
+				{% if link.name == 'Facebook' %}
+					{% assign icon = '<i class="fab fa-2x fa-facebook-square"></i>' %}
+				{% else if link.name == 'Twitter' %}
+					{% assign icon = '<i class="fab fa-2x fa-twitter"></i>' %}
+				{% else if link.name == 'Instagram' %}
+					{% assign icon = '<i class="fab fa-2x fa-instagram"></i>' %}
+				{% else if link.name == 'Youtube' %}
+					{% assign icon = '<i class="fab fa-2x fa-youtube"></i>' %}
+				{% else %}
+					{% assign icon = '<i class="fas fa-2x fa-link"></i>' %}
+				{% endif %}
+				<li>
+				<a href="{{ link.link }}">
+					{{ icon }}<span class="hidden">{{link.name}}</span>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+
+		<h4>Hours</h4>
+		<div class="location-info">
+			
+			<div class="icon">
+			<i class="fas fa-clock"></i>
+			</div>
+			<div class="content">
+			<ul class="hours">
+				{% for weekday in hours %}
+				<li data-weekday="{{ weekday.day }}"><span class="dayname">{{ weekday.day|slice: 0, 3 }}:</span> {{ weekday.hours }}</li>
+				{% endfor %}
+			</ul>
+			</div>
+		</div>
+		
+	</div>
+	
+</section>

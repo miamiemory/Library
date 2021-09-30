@@ -1,0 +1,157 @@
+---
+layout: base.liquid
+title: Randolph County Public Library
+featured:
+  - name: Randquest
+    description: Research begins with Randquest - a collection of electronic resources for school, health, business and much more!
+    link: https://www.randquest.org/
+    link_text: Start Your Search
+    icon: <i class="fas fa-3x fa-search"></i>
+  - name: Digital Media
+    description: Downloadable ebooks, audiobooks and magazines, and online children’s learning resources!
+    link: https://randolphlibrary.libguides.com/c.php?g=1108758/
+    link_text: View Our Online Resources
+    icon: <i class="fas fa-3x fa-cloud-download-alt"></i>
+  - name: Learn From Home
+    description: Supplemental home learning resources for parents, caregivers and families.
+    link: https://randolphlibrary.libguides.com/children/learnfromhome
+    link_text: Learn from Home
+    icon: <i class="fas fa-3x fa-graduation-cap"></i>
+  - name: Library Events
+    description: Check out the Library's Calendar of Events - for the whole system or by library branch.
+    link: https://www.randolphlibrary.org/libraryevents.htm
+    link_text: Stay Up to Date
+    icon: <i class="fas fa-3x fa-calendar-check"></i>
+highlights:
+  - image: highlights/fallfestival_2021.jpeg
+    link: null
+  - image: highlights/lawncare2021.png
+    link: null
+  - image: highlights/bluegrass_2021.png
+    link: null
+  - image: highlights/ufos2021.png
+    link: null
+  - image: highlights/mobilelibrary_coleridge2021.jpeg
+    link: null
+  - image: highlights/libraryelf221.jpeg
+    link: null
+  - image: highlights/pageturners2021.jpeg
+    link: null
+  - image: highlights/artadventures2021.png
+    link: null
+  
+---
+
+<section id="hero" class="hero home-hero alignfull">
+  {% image 'lost-in-a-book.jpg', 'Lost in a book', 'background-image alignfull' %}
+  <div class="fade"></div>
+	<div class="hero-content">
+    <blockquote>
+      <p>Once you have read a book you care about, some part of it is always with you. </p>
+      <cite>Louis L’Amour</cite>
+    </blockquote>
+    <p>Ready to find <em>that</em> book?</p>
+    <a href="#locations" class="button primary">Locations</a> <a href="/library-card/" class="button secondary">Library cards</a>
+  </div>
+</section>
+
+<section id="featured" class="featured alignfull layout-grid">
+  <ul class="features-grid alignwide">
+    {% for feature in featured %}
+				<li class="feature-item">
+					<div class="feature-item-icon">{{ feature.icon }}</div>
+          <div class="feature-item-content">
+            <h2>{{ feature.name }}</h2>
+            <hr class="short secondary">
+            <p>{{ feature.description }}</p>
+            <p><a href="{{ feature.link }}">{{ feature.link_text }}</a></p>
+          </div>
+					
+				</li>
+			{% endfor %}
+  </ul>
+</section>
+
+<section id="locations" class="locations alignwide">
+  <div class="text-wrapper">
+    <h2>Locations</h2>
+    <hr class="short primary">
+    <p>Randolph County Public Libraries cultivate a thriving community by nurturing readers, empowering learners, and creating connections.  We have several branches throughout the community.  Find your nearest branch below:</p>
+  </div>
+	<ul class="locations-grid">
+		{% for location in collections.locations %}
+			<li class="location-item">
+        <a href="{{ location.url }}">
+          {% image location.data.image, location.data.title, 'location-image' %}
+        </a>
+				<a href="{{ location.url }}"><h3>{{ location.data.title }}</h3></a>
+          <a href="{% mapLink location.data.address, location.data.zip %}" class="location-info">
+            <div class="icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <address class="content">
+              {{ location.data.address }}<br>
+              {{ location.data.city }}, {{ location.data.state }} {{ location.data.zip }}
+            </address>
+          </a>
+
+          {% assign phone = location.data.phone|first %}
+          <a href="{% telLink phone.number %}" class="location-info">
+            <div class="icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="content">
+              {{ phone.number }}
+            </div>
+          </a>
+          <div class="location-info">
+            <div class="icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="content">
+              <ul class="hours">
+                {% for weekday in location.data.hours %}
+                  <li data-weekday="{{ weekday.day }}"><span class="dayname">{{ weekday.day|slice: 0, 3 }}:</span> {{ weekday.hours }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+			</li>
+		{% endfor %}
+	</ul>
+</section>
+
+<section id="highlights" class="highlights alignwide">
+  <h2>Community Highlights</h2>
+  <hr class="short secondary">
+  <div class="highlight-slider">
+    <div class="slider">
+      <div class="glider-wrap">
+        <div class="slides">
+          {% for highlight in highlights %}
+            <div class="slide">
+              {% image highlight.image, 'highlight image', 'highlight-image' %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% if highlights.size > 1  %}
+      <div class="slider-controls">
+        <button class="slider-prev">❮</button>
+        <button class="slider-next">❯</button>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+
+<section id="support" class="support alignfull callout secondary">
+  <div class="callout-content">
+    <h2>Support Your Library</h2>
+    <a href="/friends/">Friends of the Library</a>, <a href="/foundation/">Foundation</a>, <a href="/memorials/">Memorials</a>
+  </div>
+</section>
+
+
+

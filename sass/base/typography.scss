@@ -1,0 +1,121 @@
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 800;
+	line-height: 1.2;
+	margin: 0 0 1rem 0;
+}
+
+h1 {
+	font-size: 3rem;
+	line-height: 1;
+}
+h2 {
+	font-size: 2.25rem;
+}
+h3 {
+	font-size: 1.75rem;
+}
+h4 {
+	font-size: 1.25rem;
+}
+
+p {
+	margin: 0.75em 0;
+}
+
+a {
+	text-decoration: none;
+}
+em {
+	font-style: italic;
+}
+
+p + h1,
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6,
+p + ul,
+p + ol,
+p + a,
+ol + h1,
+ol + h2,
+ol + h3,
+ol + h4,
+ol + h5,
+ol + h6,
+ol + ul,
+ol + a,
+ul + ol,
+ul + h1,
+ul + h2,
+ul + h3,
+ul + h4,
+ul + h5,
+ul + h6,
+ul + ul,
+ul + ol,
+ul + a {
+	margin-top: 1em;
+}
+
+img {
+	width: 100%;
+}
+
+hr {
+	border: none;
+	height: var(--border-width);
+	background-color: var(--color-ui-medium);
+	margin: var(--space-sm) 0;
+	&.short {
+		width: 6rem;
+		height: 0.25rem;
+	}
+	&.primary {
+		background-color: var(--color-primary);
+	}
+	&.secondary {
+		background-color: var(--color-secondary);
+	}
+}
+
+.hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+.highlight {
+	color: var(--color-primary);
+}
+blockquote {
+	margin: var(--space-md) 0;
+	font-family: var(--font-serif);
+	position: relative;
+	font-style: italic;
+	&:after {
+		content: '“';
+		position: absolute;
+		z-index: -1;
+		opacity: 0.2;
+		font-size: 8em;
+		top: -0.4em;
+		left: -0.2em;
+	}
+}
+cite {
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	font-size: 0.8em;
+}
+.text-wrapper {
+	max-width: 40rem;
+}

@@ -1,0 +1,40 @@
+.hero {
+	position: relative;
+	overflow: hidden;
+	min-height: 25rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 6vw;
+	color: #fff;
+	font-size: 1.5em;
+	.fade {
+		filter: brightness(0.5);
+		opacity: 0.8;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background: linear-gradient(to right, var(--color-primary), transparent);
+		z-index: -1;
+	}
+	.background-image {
+		filter: brightness(0.8);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: -2;
+
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+.hero-content {
+	max-width: 36ch;
+}
