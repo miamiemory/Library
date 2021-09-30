@@ -7,6 +7,7 @@ layout: base.liquid
 		{% image image, title, 'location-image' %}
 		<h1>{{ title }}</h1>
 		{{ content }}
+		{{calendar}}
 		<h2>Services:</h2>
 		<ul class="services-grid">
 			{% for service in services %}
@@ -23,6 +24,8 @@ layout: base.liquid
 	</div>
 	<div class="location-details">
 		<h4>Contact Info</h4>
+		{{email}}
+		<a href="mailto:{{email}}" class="location-info">{{email}}</a>
 		<a href="{% mapLink address, zip %}" class="location-info">
 			<div class="icon">
 				<i class="fas fa-map-marker-alt"></i>

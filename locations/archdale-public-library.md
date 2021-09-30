@@ -31,6 +31,7 @@ hours:
   - day: Saturday
     hours: 9:00 am - 1:00 pm
 calendar: <iframe src="https://www.google.com/calendar/embed?mode=AGENDA&amp;height=400&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=9d99p1ojlvovqit0onc8rrfapk%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="280" height="400" frameborder="0" scrolling="no"></iframe>
+email: hmason@randolphlibrary.org
 services: 
   - name: Books
     icon: <i class="fas fa-book"></i>

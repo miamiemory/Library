@@ -3,6 +3,7 @@ layout: location.liquid
 title: Asheboro Public Library
 order: 0
 image: locations/asheboro-public-library.jpg
+email: hmason@randolphlibrary.org
 address: 201 Worth Street
 city: Asheboro
 state: NC
