@@ -1,9 +1,24 @@
 ---
 layout: base.liquid
 title: Contact Us | Randolph County Public Library
-description: A short description of the content on the page.
+services: 
+  - name: Renewals & Overdues	
+    phone: 336-318-6801
 ---
 
 <section class="content">
-	
+    <p>how are you doing?</p>
+    
+    <ul>
+        {% for service in services %}
+            <li>
+                {{ service.name }}: 
+                <a href="{% telLink service.phone %}">
+                    <div class="content">
+                        {{ service.phone }}
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 </section>
