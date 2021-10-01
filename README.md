@@ -5,11 +5,17 @@ This is a static site build powered by eleventy. The compiled site is in `/_site
 ### Node
 You will need to install Node.js to run eleventy.  I recommend you use (NVM)[https://github.com/nvm-sh/nvm] to install/manage Node on your machine. Install NVM via the instruction in the repo, and then use nvm to install the latest version of Node.
 
+## Git
+PS C:\Users\hmason\Library> git config --global user.name "  "
+PS C:\Users\hmason\Library> git config --global user.email " " 
+
 ## Installation
 Install the dev environment build tools:
 `npm i`
 
 ## Development
+
+
 
 `npm run start`
 This starts a browsersync session and hot-reloads the site in-browser when you edit a source file.
