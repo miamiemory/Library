@@ -3,13 +3,13 @@ layout: location.liquid
 title: Asheboro Public Library
 order: 0
 image: locations/asheboro-public-library.jpg
-email: hmason@randolphlibrary.org
+email: reference@randolphlibrary.org
 address: 201 Worth Street
 city: Asheboro
 state: NC
 zip: 27203
 phone: 
-  - name: main
+  - name: Main
     number: (336) 318-6800
   - name: Circulation
     number: (336) 318-6801
