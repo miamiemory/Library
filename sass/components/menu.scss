@@ -60,17 +60,16 @@ a.site-link {
 	padding: 0.5rem 1rem;
 	font-size: 0.8rem;
 	display: flex;
+	align-items: center;
 	gap: 0.5rem;
-	align-items: flex-end;
 
 	> * {
 		display: block;
 	}
 	.site-logo {
 		text-align: center;
-		line-height: 0.8;
-		height: 2em;
-		width: 6em;
+		height: 3em;
+		width: 2.75em;
 	}
 	.site-title {
 		line-height: 1.2;
