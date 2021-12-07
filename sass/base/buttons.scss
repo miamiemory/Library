@@ -8,16 +8,18 @@
 	@extend %uppercase;
 	border: none;
 	background-color: var(--color-link-default);
-	color: var(--color-ui-dark);
+	color: #fff;
 	filter: brightness(1);
 	transition: filter 150ms ease-out, transform 150ms ease-out;
 	transform: scale(1);
 	text-align: center;
 
 	&.primary {
+		color: var(--color-ui-dark);
 		background: var(--color-primary);
 	}
 	&.secondary {
+		color: var(--color-ui-dark);
 		background: var(--color-secondary);
 	}
 
