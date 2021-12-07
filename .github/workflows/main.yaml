@@ -1,4 +1,4 @@
-name: Craft CMS deployments
+name: Library Server Deployment
 
 on:
   push:
@@ -13,30 +13,6 @@ jobs:
       - name: pull repository
         uses: actions/checkout@v2
 
-
-      # Use a specific version of Node
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '16'
-          check-latest: true
-
-      # Install PHP dependencies
-      #- name: 🐘 Composer install
-      #  run: composer install --no-interaction --no-progress --no-suggest --optimize-autoloader
-
-      # Install NPM dependencies
-      - name: 🟢 NPM install
-        run: npm i
-        
-      # Install Gulp CLI 
-      - name: 🥤 Gulp install
-        run: npm i -g gulp-cli
-
-      # Build assets using locally installed Gulp
-      - name: 🥤 Build assets with Gulp
-        run: npx gulp build
-
       # ftp
       # exclude web/uploads is there to avoid deleting user uploaded files
       - name: 📂 Sync files
@@ -45,7 +21,7 @@ jobs:
           ftp_host: ${{ secrets.FTP_SERVER }}
           ftp_username: ${{ secrets.FTP_USERNAME }}
           ftp_password: ${{ secrets.FTP_PASSWORD }}
-          local_source_dir: "./"
+          local_source_dir: "./_test/"
           dist_target_dir: ${{ secrets.REMOTE_DIR_PROD}}
           only_newer: true
           #delete: "true"
