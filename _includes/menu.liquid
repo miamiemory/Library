@@ -10,6 +10,19 @@
 		<div class="text hidden">Open the Menu</div>
 	</button>
 	<div class="menu-wrapper">
+		<div class="search-wrapper">
+			<div class="form-row">
+			
+				<form name="catalog-search" id="catalog-search" action="https://randol.ent.sirsi.net/client/en_US/randolph/search/results" method="get">
+					<label class="hidden" for="q">Search</label>
+					<div class="form-inline">
+						<input id="q" name="q" title="Search For:" maxlength="256" placeholder="Search" type="search">
+						<button class="button primary" type="submit"><i class="fas fa-search" title="search"></i></button>
+					</div>
+				</form>
+				<a class="button secondary" href="/my-account">My Account</a>
+			</div>
+		</div>
 		<ul class="menu-list" data-level="1">
 			<li class="menu-item">
 				<a class="menu-link" href="https://randol.ent.sirsi.net/client/en_US/randolph/search/results?q=&GO22=SEARCH">Catalog</a>
@@ -74,5 +87,6 @@
 				<a class="menu-link" href="https://randolphlibrary.libguides.com/c.php?g=247626">Outreach</a>
 			</li>
 		</ul>
+		
 	</div>
 </nav>

@@ -1,0 +1,28 @@
+name: Library Server Deployment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Pull repository into the current pipeline
+      - name: pull repository
+        uses: actions/checkout@v2
+
+      # ftp
+      # exclude web/uploads is there to avoid deleting user uploaded files
+      - name: 📂 Sync files
+        uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+        with:
+          ftp_host: ${{ secrets.FTP_SERVER }}
+          ftp_username: ${{ secrets.FTP_USERNAME }}
+          ftp_password: ${{ secrets.FTP_PASSWORD }}
+          local_source_dir: "./_test/"
+          dist_target_dir: ${{ secrets.REMOTE_DIR_PROD}}
+          only_newer: true
+          #delete: "true"
+          exclude: "'^.git/' '^.github/' 'package-lock.json' 'config' '^node_modules/'"
