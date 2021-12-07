@@ -24,6 +24,9 @@
 		@include lg-and-up {
 			max-width: 14rem;
 		}
+		button {
+			line-height: 0;
+		}
 	}
 	input {
 		font-size: 0.8rem;
