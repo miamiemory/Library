@@ -133,10 +133,10 @@
 }
 .slider-controls {
 	position: absolute;
-	height: 3rem;
-	top: calc(50% - 1.5rem);
+	height: 2rem;
+	top: calc(50% - 1rem);
 	width: calc(100% + 3rem + 2vw);
-	left: calc(-1.5rem - 1vw);
+	left: calc(-1rem - 1vw);
 	display: flex;
 	justify-content: space-between;
 
@@ -146,7 +146,7 @@
 		margin: 0;
 		background: none;
 		border: none;
-		font-size: 3rem;
+		font-size: 2rem;
 
 		&:hover,
 		&:focus {
