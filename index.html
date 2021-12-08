@@ -128,15 +128,16 @@ highlights:
       <div class="glider-wrap">
         <div class="slides">
           {% for highlight in highlights %}
-          {% if highlight.link %}
-          <a href= "{{highlight.link}}">
-          {%endif%}
             <div class="slide">
+              {% if highlight.link %}
+                <a href= "{{highlight.link}}">
+              {% endif %}
               {% image highlight.image, 'highlight image', 'highlight-image' %}
+              {% if highlight.link %}
+                </a>
+              {% endif %} 
             </div>
-            {% if highlight.link %}
-            </a>
-            {%endif%}  
+ 
           {% endfor %}
         </div>
       </div>
