@@ -24,7 +24,7 @@ featured:
     icon: <i class="fas fa-3x fa-calendar-check"></i>
 highlights:
   - image: highlights/fallfestival_2021.jpeg
-    link: null
+    link: https://www.digitalliteracyassessment.org/
   - image: highlights/lawncare2021.png
     link: null
   - image: highlights/bluegrass_2021.png
@@ -128,9 +128,15 @@ highlights:
       <div class="glider-wrap">
         <div class="slides">
           {% for highlight in highlights %}
+          {% if highlight.link %}
+          <a href= "{{highlight.link}}">
+          {%endif%}
             <div class="slide">
               {% image highlight.image, 'highlight image', 'highlight-image' %}
             </div>
+            {% if highlight.link %}
+            </a>
+            {%endif%}  
           {% endfor %}
         </div>
       </div>
