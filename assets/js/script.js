@@ -22,6 +22,7 @@ highlightSliders.forEach((slider) => {
 		slidesToScroll: 1,
 		scrollLock: true,
 		duration: 0.7,
+		rewind:true, 
 		arrows: {
 			prev: prev,
 			next: next,
