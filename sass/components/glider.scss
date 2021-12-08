@@ -139,6 +139,7 @@
 	left: calc(-1rem - 1vw);
 	display: flex;
 	justify-content: space-between;
+	pointer-events: none;
 
 	button {
 		color: var(--color-ui-dark);
@@ -147,6 +148,7 @@
 		background: none;
 		border: none;
 		font-size: 2rem;
+		pointer-events: auto;
 
 		&:hover,
 		&:focus {
