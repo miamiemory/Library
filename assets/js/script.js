@@ -18,7 +18,7 @@ highlightSliders.forEach((slider) => {
 	slider.setAttribute('role', 'tablist');
 
 	let glider = new Glider(slides, {
-		slidesToShow: 2,
+		slidesToShow: 1,
 		slidesToScroll: 1,
 		scrollLock: true,
 		duration: 0.7,
@@ -31,11 +31,17 @@ highlightSliders.forEach((slider) => {
 			{
 				breakpoint: 600,
 				settings: {
-					slidesToShow: 3,
+					slidesToShow: 2,
 				},
 			},
 			{
-				breakpoint: 1200,
+				breakpoint: 900,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 1500,
 				settings: {
 					slidesToShow: 4,
 				},
