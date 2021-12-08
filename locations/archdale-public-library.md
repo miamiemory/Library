@@ -17,7 +17,7 @@ links:
     link: https://www.facebook.com/ArchdaleLibrary
 hours: 
   - day: Sunday
-    hours: Closed
+    hours: OPEN
   - day: Monday
     hours: 9:00 am - 8:00 pm
   - day: Tuesday
