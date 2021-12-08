@@ -22,7 +22,7 @@ highlightSliders.forEach((slider) => {
 		slidesToScroll: 1,
 		scrollLock: true,
 		duration: 0.7,
-		rewind:true, 
+		rewind: true,
 		arrows: {
 			prev: prev,
 			next: next,
@@ -42,6 +42,37 @@ highlightSliders.forEach((slider) => {
 			},
 		],
 	});
+
+	let autoplayDelay = 3000;
+
+	let timeout = -1;
+	let hovering = false;
+	function startTimeout() {
+		clearTimeout(timeout);
+		timeout = setTimeout(() => {
+			if (!hovering)
+				glider.scrollItem((glider.slide + 1) % glider.slides.length);
+		}, autoplayDelay);
+	}
+
+	let animID = 0;
+	const isAnimating = () => glider.animate_id !== animID;
+	slides.addEventListener("glider-animated", () => {
+		animID = glider.animate_id;
+		if (!hovering) startTimeout();
+	});
+
+	slides.addEventListener("mouseover", () => {
+		hovering = true;
+		clearTimeout(timeout);
+	});
+
+	slides.addEventListener("mouseout", () => {
+		hovering = false;
+		if (!isAnimating()) startTimeout();
+	});
+
+	startTimeout();
 	setTimeout(function () {
 		glider.refresh();
 	}, 0);
